@@ -3,6 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://8f4esq11gp6f" path="res://assets/sprites/knight.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://cqex50s0r76ul" path="res://scripts/player.gd" id="1_g2els"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ni07"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l71n6"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(32, 160, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
 region = Rect2(0, 0, 32, 32)
@@ -89,6 +97,17 @@ region = Rect2(224, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oiiii"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ni07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l71n6")
+}],
+"loop": 1,
+"name": &"Climb",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g2els")
@@ -179,10 +198,16 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=759473003]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_oiiii")
-animation = &"Jump"
+animation = &"Climb"
 autoplay = "Idle"
-frame_progress = 1.0
+frame_progress = 0.17657419
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1094504942]
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_oiiii")
+
+[node name="LadderRayCast" type="RayCast2D" parent="." unique_id=375796763]
+position = Vector2(0, -12)
+target_position = Vector2(0, -10)
+collision_mask = 2
+hit_from_inside = true
