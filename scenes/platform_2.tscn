@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cevyiqhytqft6" path="res://assets/sprites/platforms.png" id="1_kx63a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oiiii"]
-size = Vector2(32, 8)
+size = Vector2(32, 8.75)
 
 [node name="Platform 2" type="AnimatableBody2D" unique_id=523548487]
 
