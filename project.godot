@@ -28,6 +28,10 @@ movie_writer/movie_file="C:/Users/Paul Capanna/OneDrive/Documents/my-first-game-
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
+[global_group]
+
+Player=""
+
 [input]
 
 jump={
