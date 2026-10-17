@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://buq21osce7h6k"]
+
+[ext_resource type="Texture2D" uid="uid://bki4ljsjrqp1" path="res://assets/sprites/knight(1).png" id="1_0ad5b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7tdj"]
+atlas = ExtResource("1_0ad5b")
+region = Rect2(0, 0, 46, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nj1tm"]
+atlas = ExtResource("1_0ad5b")
+region = Rect2(0, 26, 46, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oiiii"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7tdj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nj1tm")
+}],
+"loop": 1,
+"name": &"MainMenu",
+"speed": 2.0
+}]
+
+[node name="MainMenu_Screen" type="AnimatedSprite2D" unique_id=1009235842]
+sprite_frames = SubResource("SpriteFrames_oiiii")
+animation = &"MainMenu"
+autoplay = "MainMenu"
+frame_progress = 0.60417044

@@ -6,9 +6,13 @@ const JUMP_VELOCITY = -300.0
 
 @onready var ladder_ray_cast: RayCast2D = $LadderRayCast
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var end_ray: RayCast2D = $EndRay
 
 func _physics_process(delta: float) -> void:
 	var laddercollider = ladder_ray_cast.get_collider()
+	var gamending = end_ray.get_collider()
+	
+	if gamending: get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
 	
 	if laddercollider: _ladder_climb(delta)
 	else: _movement(delta)
