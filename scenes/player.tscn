@@ -222,5 +222,7 @@ hit_from_inside = true
 position = Vector2(0, -5)
 target_position = Vector2(13, 0)
 collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
 
 [connection signal="area_entered" from="playerarea" to="." method="_on_area_2d_area_entered"]

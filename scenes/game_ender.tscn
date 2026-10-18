@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cow4x08c81rp0"]
+
+[ext_resource type="Texture2D" uid="uid://dl3ctxywgcgur" path="res://assets/sprites/tileset_snow.png" id="1_0rf2p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ewmql"]
+size = Vector2(10, 16)
+
+[node name="GameEnder" type="Sprite2D" unique_id=1653739308]
+texture = ExtResource("1_0rf2p")
+region_enabled = true
+region_rect = Rect2(146, 33, 11, 15)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1786694868]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1003839862]
+shape = SubResource("RectangleShape2D_ewmql")
