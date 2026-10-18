@@ -1,7 +1,12 @@
-extends Area2D
+extends AnimatedSprite2D
 
-func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"):
-		print("checkpoint")
-		if body.has_method("set_checkpoint"):
-			body.set_checkpoint(global_position)
+
+
+
+@onready var animated_sprite_2d: AnimatedSprite2D = $"."
+
+
+
+func _on_checkpoint_area_entered(area: Area2D) -> void:
+	if area.name == "playerarea":
+		animated_sprite_2d.play("checkflag")

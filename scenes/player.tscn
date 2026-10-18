@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://8f4esq11gp6f" path="res://assets/sprites/knight.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://cqex50s0r76ul" path="res://scripts/player.gd" id="1_g2els"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_oiiii"]
+radius = 5.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ni07"]
 atlas = ExtResource("1_3vyb7")
 region = Rect2(0, 160, 32, 32)
@@ -187,13 +190,16 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_oiiii"]
-radius = 5.0
-
 [node name="Player" type="CharacterBody2D" unique_id=1788859070 groups=["Player"]]
 z_index = 5
 collision_layer = 2
 script = ExtResource("1_g2els")
+
+[node name="playerarea" type="Area2D" parent="." unique_id=922487334]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="playerarea" unique_id=890242919 groups=["Player"]]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_oiiii")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=759473003 groups=["Player"]]
 position = Vector2(0, -12)
@@ -216,3 +222,5 @@ hit_from_inside = true
 position = Vector2(0, -5)
 target_position = Vector2(13, 0)
 collision_mask = 4
+
+[connection signal="area_entered" from="playerarea" to="." method="_on_area_2d_area_entered"]
