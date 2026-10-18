@@ -41,7 +41,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"checkflag",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -57,7 +57,7 @@ size = Vector2(280, 1663)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1559095448]
 sprite_frames = SubResource("SpriteFrames_ewmql")
-animation = &"checkpole"
+animation = &"checkflag"
 autoplay = "checkpole"
 script = ExtResource("1_ywqth")
 

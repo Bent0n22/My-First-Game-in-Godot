@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cnynepymhwial"]
+
+[ext_resource type="Texture2D" uid="uid://rrti6nu6l1d4" path="res://assets/sprites/Fantasy-TileSet.png" id="1_jtnio"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oiiii"]
+size = Vector2(48, 12)
+
+[node name="platform_grass" type="AnimatableBody2D" unique_id=19297621]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=482163749]
+texture = ExtResource("1_jtnio")
+region_enabled = true
+region_rect = Rect2(0, 95, 48, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1996926668]
+shape = SubResource("RectangleShape2D_oiiii")
+one_way_collision = true
